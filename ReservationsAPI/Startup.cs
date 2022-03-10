@@ -37,8 +37,6 @@ namespace ReservationsAPI
             services.AddControllers().AddNewtonsoftJson();
             services.AddHttpClient();
             services.AddTransient<IReservationRepository, ReservationRepository>();
-            //services.AddTransient<IRoomRepository, RoomRepository>();
-            //services.AddTransient<IContactRepository, ContactRepository>();
             services.AddTransient<IRoomRepository, RoomRepository>();
             services.AddDbContext<RoomsContext>(
          options => options.UseSqlServer(Configuration.GetConnectionString("ContactsDB")));
